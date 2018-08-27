@@ -60,18 +60,18 @@ div.buttons{
 input[type=text], textarea {
 	font-family: Calibri;
 	font-size: 20px;
-    width: 100%; /* Full width */
-    padding: 20px; /* Some padding */  
-    border: 1px solid #ccc; /* Gray border */
-    border-radius: 4px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
-    margin-top: 6px; /* Add a top margin */
-    margin-bottom: 20px; /* Bottom margin */
-    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-	
+    width: 100%; 
+    padding: 20px;   
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 20px; 
+    	
 	}
 
 input[type=save],input[type=discard]{
+	display:inline-block;
     background: linear-gradient(to bottom, rgb(248,190,0),rgb(249, 156, 0));
     color: rgb(36,36,36);
 	font-weight:bold;
