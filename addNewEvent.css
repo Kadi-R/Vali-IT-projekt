@@ -1,27 +1,28 @@
-* {
-  box-sizing: border-box;
+html, body {
+    background: linear-gradient(to bottom, rgb(248,190,0),rgb(249, 156, 0));
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: Calibri;
+    background-repeat: no-repeat;
+    margin:0;
+    padding:0;
+    height: 100%;
 }
 
-body {
-  background: yellow; /* fallback for old browsers */
-  background: linear-gradient(to bottom, rgb(248,190,0),rgb(249, 156, 0));
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  font-family: Calibri;
-  font-size:18px;
-}
 
 div.container {
-  margin: 200px auto;
-  background-color: rgb(36,36,36);
-  width: 800px;
-  height:850px;
-  border-radius: 30px;
-  padding: 20px;
-  position: relative;
-  box-shadow:0 3px 20px 0px rgba(0, 0, 0, 0.6);
+
+    background-color: rgb(36,36,36);
+    width: 800px;
+    height:850px;
+    border-radius: 30px;
+    padding: 20px;
+    position: absolute;
+    left:1100px;
+    top: 200px;
+    box-shadow:0 3px 20px 0px rgba(0, 0, 0, 0.6);
   
 }
 
@@ -35,6 +36,7 @@ h1 {
 h2 {
 	padding:10px 10px;
 	color:white;
+    font-size:30px;
 	
 }
 
@@ -51,7 +53,7 @@ div.buttons{
 	-webkit-border-radius: 0px 0px 30px 30px;
 	border-radius: 0px 0px 30px 30px; 
 	position: absolute;
-	top: 720px;
+	top: 760px;
 	left: 0;
 	padding:30px;
 
@@ -82,8 +84,8 @@ input[type=save],input[type=discard]{
     border-radius:40px;
     cursor: pointer;
 	width:25%;
-	margin-right:80px;
-	margin-left:90px;
+	margin-right:25px;
+	margin-left:70px;
 }
 
 
