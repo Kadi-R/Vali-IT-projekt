@@ -17,7 +17,7 @@ html, body {
 
     background-color: rgb(36,36,36);
     width: 500px;
-    height:650px;
+    height:670px;
     border-radius: 30px;
     padding: 10px;
     position: absolute;
@@ -54,7 +54,7 @@ font-size:15px;
 	-webkit-border-radius: 0 0 30px 30px;
 	border-radius: 0 0 30px 30px; 
 	position: absolute;
-	top: 583px;
+	top: 600px;
 	left: 0;
 	padding:30px;
 
@@ -86,7 +86,7 @@ input[type=save],input[type=discard]{
     cursor: pointer;
 	width:25%;
 	margin-right:10px;
-	margin-left:50px;
+	margin-left:55px;
 }
 
 
