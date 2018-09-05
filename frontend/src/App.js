@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Col, FormFeedback } from 'reactstrap';
 import logo from './logo.svg';
 import './css/App.css';
 
@@ -29,31 +29,22 @@ class App extends Component {
                   <h1 className="App-title">Kohtumised käeulatuses!</h1>
               <div className="container-login100">
                   <Form>
-                      <FormGroup>
-                          <Label for="Eesnimi">Eesnimi:</Label>
-                          <Input type="text" name="firstname" id="firstname" placeholder="Sisestage eesnimi" />
+                      <FormGroup row>
+                          <Label for="username" sm={3}>Kasutaja:</Label>
+                          <Col sm={8}>
+                            <Input type="text" name="username" id="username" placeholder="Sisestage kasutajanimi" />
+                          </Col>
                       </FormGroup>
-                      <FormGroup>
-                          <Label for="Perenimi">Perenimi:</Label>
-                          <Input type="text" name="surname" id="surname" placeholder="Sisestage perekonnanimi" />
-                      </FormGroup>
-                      <FormGroup>
-                          <Label for="Email">Email:</Label>
-                          <Input type="email" name="email" id="Email" placeholder="Sisestage email" />
-                      </FormGroup>
-                      <FormGroup>
-                          <Label for="Password">Password</Label>
+                      <FormGroup row>
+                          <Label for="Password" sm={3}>Parool:</Label>
+                          <Col sm={8}>
                           <Input type="password" name="password" id="Password" placeholder="Sisestage parool" />
+                          </Col>
                       </FormGroup>
-                      <Button className="send-button">Saada</Button> <Button className="new-user-button">Loo uus kasutaja</Button>
+                      <Button className="login-btn">LOGI SISSE</Button> <Button className="new-user-button">Loo uus kasutaja</Button>
 
                           <div className="text-right p-t-13 p-b-23">
-						<span className="txt1">
-							Unustasid
-						</span>
-                              <a href="#" className="txt2">
-                                  kasutajanime/parooli?
-                              </a>
+                              <p className="txt1">Unustasid <a href="#" className="txt2">kasutajanime/parooli?</a></p>
                           </div>
                   </Form>
                   </div>

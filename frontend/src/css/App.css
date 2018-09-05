@@ -9,29 +9,14 @@
   align-items:center;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 2px;
-  color: white;
-}
-
 .App-title {
   font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
-
-
-
 
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
@@ -57,14 +42,7 @@
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
-
 body, html {
-  height: 100%;
   font-family: Ubuntu-Regular, sans-serif;
 }
 
@@ -110,23 +88,7 @@ ul, li {
 
 
 /*---------------------------------------------*/
-input {
-  outline: none;
-  border: none;
-}
-
-input[type="number"] {
-  -moz-appearance: textfield;
-  appearance: none;
-  -webkit-appearance: none;
-}
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
-textarea {
+input, textarea {
   outline: none;
   border: none;
 }
@@ -194,7 +156,6 @@ iframe {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding: 15px;
@@ -202,8 +163,8 @@ iframe {
 }
 
 .wrap-login100 {
-  margin:0 auto 0 auto;
-  width: 24%;
+  margin:0 auto;
+  width: 30%;
   heigth: 100px;
   background: rgb(36,36,36);
   border-radius: 10px;
@@ -215,15 +176,6 @@ iframe {
   -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
   position:relative;
   align-items:center;
-}
-
-
-/*==================================================================
-[ Form ]*/
-
-.login100-form {
-  width: 100%;
-  position: relative;
 }
 
 /*------------------------------------------------------------------
@@ -257,81 +209,30 @@ label {
 
 }
 
-
-/*------------------------------------------------------------------
-[ Focus Input ]*/
-
-.focus-input100 {
-  display: block;
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
-  border-radius: 31px;
-  background-color: #ebebeb;
-  pointer-events: none;
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-}
-
 .input100:focus + .focus-input100 {
   width: calc(100% + 20px);
 }
 
 /*------------------------------------------------------------------
 [ Button ]*/
-.container-login100-form-btn {
-  width: 100%;
+.new-user-button {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-  padding-top:10px;
-
-}
-
-.container-create-new-user-form-btn {
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  padding-top:10px;
-}
-
-.create-new-user-form-btn {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: left;
   align-items: center;
-  padding: 20px 20px;
-  width: 100%;
+  padding: 10px 10px;
+  width: 91%;
   height: 50px;
-  background: yellow;
-  border-radius: 25px;
+  background: orange;
+  border-radius: 15px;
+  margin-top:5px;
 
   font-family: Ubuntu-Bold;
-  font-size: 15px;
-  color: #fff;
+  font-size: 16px;
+  color: black;
   line-height: 1.2;
   text-transform: uppercase;
   text-align:left;
@@ -342,19 +243,20 @@ label {
   transition: all 0.4s;
 }
 
-.login100-form-btn {
+.login-btn {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
   padding: 0 20px;
-  width: 100%;
+  width: 91%;
   height: 50px;
   background-color: rgb(63,63,63);
-  border-radius: 25px;
+  border-radius: 15px;
+
 
   font-family: Ubuntu-Bold;
   font-size: 15px;
@@ -2866,64 +2768,6 @@ label {
 
 
 
-
-/*[ Transition ]
------------------------------------------------------------
-*/
-.trans-0-1 {
-  -webkit-transition: all 0.1s;
-  -o-transition: all 0.1s;
-  -moz-transition: all 0.1s;
-  transition: all 0.1s;
-}
-.trans-0-2 {
-  -webkit-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  transition: all 0.2s;
-}
-.trans-0-3 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.trans-0-4 {
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-}
-.trans-0-5 {
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  transition: all 0.5s;
-}
-.trans-0-6 {
-  -webkit-transition: all 0.6s;
-  -o-transition: all 0.6s;
-  -moz-transition: all 0.6s;
-  transition: all 0.6s;
-}
-.trans-0-9 {
-  -webkit-transition: all 0.9s;
-  -o-transition: all 0.9s;
-  -moz-transition: all 0.9s;
-  transition: all 0.9s;
-}
-.trans-1-0 {
-  -webkit-transition: all 1s;
-  -o-transition: all 1s;
-  -moz-transition: all 1s;
-  transition: all 1s;
-}
-
-
-
-/*[ Layout ]
-///////////////////////////////////////////////////////////
-*/
 
 /*[ Flex ]
 -----------------------------------------------------------
