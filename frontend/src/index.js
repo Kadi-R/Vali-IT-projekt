@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './css/index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
-import App from './App';
+import AppPage from './AppPage';
+//import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<AppPage />, document.getElementById('root'));
 registerServiceWorker();
