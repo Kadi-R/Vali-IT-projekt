@@ -1,26 +1,23 @@
 html, body {
-    background: linear-gradient(to bottom, rgb(248,190,0),rgb(249, 156, 0));
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    font-family: Calibri;
-    background-repeat: no-repeat;
-    margin:0;
-    padding:0;
     height: 100%;
+    min-height:100%;
+    background:linear-gradient(rgb(248,190,0),rgb(259,156,0));
+    justify-content: center;
+
 }
 
-
-.AppPage{
+.Greeting{
     margin:0px;
-    padding:0px;
     border: 0px;
     display:inline-block;
     position:relative;
-    left:50px;
-    bottom:2px;
+    padding-left:45%;
+    padding-top: 5%;
+    color: white;
+}
 
+.Wrap {
+    width:1325px;
 
 }
 h1{
@@ -35,73 +32,45 @@ h1{
     box-shadow:0 3px 20px 0px rgba(0, 0, 0, 0.6);
 
 }
-
-nav{
-    line-height:70px;
-    display: inline;
-    position:absolute;
-    left:1100px;
-    top:100px;
-}
-button{
-    background-color: rgb(63,63,63);
+.btn-secondary{
     color: white;
-    border:none;
     border-radius: 40px;
-    padding:10px 20px;
-    display: inline;
     font-size:25px;
     font-weight:bold;
     box-shadow:0 3px 20px 0px rgba(0, 0, 0, 0.6);
 
 }
 
-.container2 {
-    background-color: rgb(36,36,36);
-    border-radius: 30px;
-    display: inline-block;
-    position:relative;
-    top:2px;
-    right:2px;
-    box-shadow:0 3px 20px 0px rgba(0, 0, 0, 0.6);
 
-
-}
-.resize {
-    margin:30px 0px;
-    background: linear-gradient(to bottom, rgb(248,190,0),rgb(249, 156, 0));
-    padding:10px 20px;
-    border-radius: 10px;
+nav{
+    line-height:70px;
+    display: inline;
+    padding-left: 80%;
+    width: 100%;
 
 }
 
-.img1, .img2, .img3{
 
-    width:20px;
-    height:20px;
-    background-color: rgb(63,63,63);
-    padding:10px;
-    border-radius: 50px;
-
-}
 .container3 {
     background-color: rgb(36,36,36);
     border-radius: 30px;
-    display:inline-block;
-    padding-top: 20px;
+    padding-top: 2%;
+    padding-left: 1%;
     width:1150px;
     padding-bottom: 200px;
     font-size:20px;
     color:white;
-    margin-left:10px;
-    position:relative;
-    top:30px;
-    right:2px;
-    overflow-y: hidden;
     box-shadow:0 3px 20px 0px rgba(0, 0, 0, 0.6);
+    text-align: center;
+
+
 }
 
-
+.wrapper {
+    padding-left: 15%;
+    padding-top: 5%;
+    width: 1000px;
+}
 
 th{
     background: linear-gradient(to bottom, rgb(248,190,0),rgb(249, 156, 0));
@@ -115,19 +84,13 @@ th{
 td{
     text-align: center;
     padding:5px 20px 5px 15px;
+    text-align: center;
 
 
 }
-
-
-
-
-.img4, .img5 {
-    color:white;
-    width:20px;
-    height:20px;
-    padding:10px;
-    border-radius: 50px;
+input[type='checkbox'] {
+    text-align: center;
 
 }
+
 
