@@ -39,14 +39,14 @@
 */
 
 
-/*//////////////////////////////////////////////////////////////////
-[ RESTYLE TAG ]*/
-
-body, html {
-  font-family: Ubuntu-Regular, sans-serif;
-}
-
 /*---------------------------------------------*/
+
+html, body {
+  height: 100%;
+  min-height:100%;
+  background:linear-gradient(rgb(248,190,0),rgb(259,156,0));
+  justify-content: center;
+}
 a {
   font-family: Ubuntu-Regular;
   font-size: 14px;
@@ -137,15 +137,25 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ login ]*/
 
+input#username {
+  background-image:url('../images/userico.png');
+  background-repeat:no-repeat;
+  background-position:6px;
+}
+input#password {
+  background-image:url('../images/keys.png');
+  background-repeat:no-repeat;
+  background-position:6px;
+}
 .limiter {
   display:flex;
   width: 100%;
-  background-size: 100%;
-  background:linear-gradient(rgb(258,190,0),rgb(259,156,0));
-  flex-direction: row;
+  heigth:100%;
+  /*flex-direction: row;*/
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding-top:8%;
 }
 
 .container-login100 {
@@ -163,8 +173,7 @@ iframe {
 }
 
 .wrap-login100 {
-  margin:0 auto;
-  width: 30%;
+  width: 20%;
   heigth: 100px;
   background: rgb(36,36,36);
   border-radius: 10px;
