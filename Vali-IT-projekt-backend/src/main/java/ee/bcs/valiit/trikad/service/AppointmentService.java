@@ -1,8 +1,8 @@
-package trikad.service;
+package ee.bcs.valiit.trikad.service;
 
-import trikad.Appointments;
-import trikad.AppointmentsRepository;
-import trikad.UsersRepository;
+import ee.bcs.valiit.trikad.data.Appointments;
+import ee.bcs.valiit.trikad.data.AppointmentsRepository;
+import ee.bcs.valiit.trikad.data.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

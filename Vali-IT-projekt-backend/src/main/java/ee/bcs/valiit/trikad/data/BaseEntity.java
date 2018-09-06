@@ -1,4 +1,4 @@
-package trikad;
+package ee.bcs.valiit.trikad.data;
 
 import lombok.Data;
 
@@ -15,5 +15,4 @@ import java.io.Serializable;
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "id")
         private Long id;
-
     }
