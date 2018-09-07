@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Button, Form, FormGroup, Label, Input, Col} from 'reactstrap';
+import {Button, Form, FormGroup, Input, Col} from 'reactstrap';
 import logo from './images/logo.svg';
 import './css/App.css';
 import Modal from 'react-responsive-modal';
@@ -24,8 +24,9 @@ class App extends Component {
         this.setState({ open: false });
     };
 
+
   render() {
-      const { open } = this.state;
+      const {open} = this.state;
     return (
       <div className="App">
           <div className="limiter">
@@ -46,9 +47,9 @@ class App extends Component {
                       </FormGroup>
                       <Button className="login-btn">LOGI SISSE</Button>
                       <Button className="new-user-button" onClick={this.onOpenModal}>LOO KASUTAJA</Button>
-                      <Modal open={open} onClose={this.onCloseModal} centered classNames={{ overlay: 'custom-overlay', modal: 'custom-modal' }}>
+                      <Modal open={open} onClose={this.onCloseModal} centered classNames={{ overlay: 'custom-overlay', modal: 'custom-modal'}}>
                           <h4>Uue kasutaja loomine</h4>
-                          <Form horizontal>
+                          <Form>
                               <FormGroup>
                                   <Input type="text" name="firstname" id="firstname" placeholder="Eesnimi" />
                               </FormGroup>
@@ -66,7 +67,17 @@ class App extends Component {
                           <Button color="secondary" onClick={this.onCloseModal}>TÜHISTA</Button>{' '}
                       </Modal>
                           <div className="text-right p-t-13 p-b-23">
-                              <p className="txt1">Unustasid <a href="#" className="txt2">kasutajanime/parooli?</a></p>
+                              <p className="txt1">Unustasid <a href='#' className="txt2" onClick={this.onOpenModal}>kasutajanime/parooli?</a></p>
+                              <Modal open={open} onClose={this.onCloseModal} centered classNames={{ overlay: 'custom-overlay', modal: 'custom-modal' }}>
+                                  <h4>Parooli taastamine</h4>
+                                  <Form>
+                                      <FormGroup>
+                                          <Input type="text" name="forgot-email" id="forgot-email" placeholder="Sisesta email" />
+                                      </FormGroup>
+                                  </Form>
+                                  <Button color="warning">SAADA</Button>{' '}
+                                  <Button color="secondary" onClick={this.onCloseModal}>TÜHISTA</Button>{' '}
+                              </Modal>
                           </div>
                   </Form>
                   </div>
