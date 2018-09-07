@@ -26,10 +26,27 @@ class AppPage extends Component {
                 <div className="Wrap">
                     <header>
                         <nav>
-                            <button type="button" id="logout" className="btn btn-secondary"
-                                    onClick="prepareCustomerAdd()">LOGI
-                                VÄLJA
+                            <button type="button" id="logout" className="btn btn-secondary" onClick={this.onOpenModal}>
+                                LOGI VÄLJA
                             </button>
+                            <Modal
+                                open={open}
+                                onClose={this.onCloseModal}
+                                center
+                                classNames={{
+                                    transitionEnter: 'transition-enter',
+                                    transitionEnterActive: 'transition-enter-active',
+                                    transitionExit: 'transition-exit-active',
+                                    transitionExitActive: 'transition-exit-active',
+                                }}
+                                animationDuration={1000}
+                            >
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                                    pulvinar risus non risus hendrerit venenatis. Pellentesque sit amet
+                                    hendrerit risus, sed porttitor quam.
+                                </p>
+                            </Modal>
                         </nav>
                     </header>
 
@@ -55,13 +72,48 @@ class AppPage extends Component {
                                     <td>Silmaarsti aeg. Silmaarsti nimi on: dr Kukk</td>
                                     <td><Input type="checkbox" id="checkbox2"/>{' '}</td>
                                     <div className="buttons">
-                                        <button type="button" id="change" className="btn btn-secondary"
-                                                onClick="prepareCustomerAdd()">MUUDA
-
+                                        <button type="button" id="change" className="btn btn-secondary" onClick={this.onOpenModal}>
+                                            MUUDA
                                         </button>
-                                        <button type="button" id="delete" className="btn btn-secondary"
-                                                onClick="prepareCustomerAdd()">KUSTUTA
+                                        <Modal
+                                            open={open}
+                                            onClose={this.onCloseModal}
+                                            center
+                                            classNames={{
+                                                transitionEnter: 'transition-enter',
+                                                transitionEnterActive: 'transition-enter-active',
+                                                transitionExit: 'transition-exit-active',
+                                                transitionExitActive: 'transition-exit-active',
+                                            }}
+                                            animationDuration={1000}
+                                        >
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                                                pulvinar risus non risus hendrerit venenatis. Pellentesque sit amet
+                                                hendrerit risus, sed porttitor quam.
+                                            </p>
+                                        </Modal>
+                                        <button type="button" id="change" className="btn btn-secondary" onClick={this.onOpenModal}>
+                                            KUSTUTA
                                         </button>
+                                        <Modal
+                                            open={open}
+                                            onClose={this.onCloseModal}
+                                            center
+                                            classNames={{
+                                                transitionEnter: 'transition-enter',
+                                                transitionEnterActive: 'transition-enter-active',
+                                                transitionExit: 'transition-exit-active',
+                                                transitionExitActive: 'transition-exit-active',
+                                            }}
+                                            animationDuration={1000}
+                                        >
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                                                pulvinar risus non risus hendrerit venenatis. Pellentesque sit amet
+                                                hendrerit risus, sed porttitor quam.
+                                            </p>
+                                        </Modal>
                                     </div>
 
                                 </tr>
@@ -90,37 +142,7 @@ class AppPage extends Component {
 
 
                 </div>
-                <div className="example">
-                    <h4>Custom animation</h4>
-                    <button className="btn btn-action" onClick={this.onOpenModal}>
-                        Open
-                    </button>
-                    {' '}
-                    <a
-                        href="https://github.com/pradel/react-responsive-modal/blob/master/docs/src/examples/custom-animation.js"
-                        target="_blank"
-                    >
-                        See source code
-                    </a>
-                    <Modal
-                        open={open}
-                        onClose={this.onCloseModal}
-                        center
-                        classNames={{
-                            transitionEnter: 'transition-enter',
-                            transitionEnterActive: 'transition-enter-active',
-                            transitionExit: 'transition-exit-active',
-                            transitionExitActive: 'transition-exit-active',
-                        }}
-                        animationDuration={1000}
-                    >
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                            pulvinar risus non risus hendrerit venenatis. Pellentesque sit amet
-                            hendrerit risus, sed porttitor quam.
-                        </p>
-                    </Modal>
-                </div>
+
                 </body>
 
             </div>
