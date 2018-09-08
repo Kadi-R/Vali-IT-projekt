@@ -29,6 +29,7 @@ class AppPage extends Component {
                             <button type="button" id="logout" className="btn btn-secondary" onClick={this.onOpenModal}>
                                 LOGI VÄLJA
                             </button>
+
                             <Modal
                                 open={open}
                                 onClose={this.onCloseModal}
@@ -72,7 +73,8 @@ class AppPage extends Component {
                                     <td>Silmaarsti aeg. Silmaarsti nimi on: dr Kukk</td>
                                     <td><Input type="checkbox" id="checkbox2"/>{' '}</td>
                                     <div className="buttons">
-                                        <button type="button" id="change" className="btn btn-secondary" onClick={this.onOpenModal}>
+                                        <button type="button" id="change" className="btn btn-secondary"
+                                                onClick={this.onOpenModal}>
                                             MUUDA
                                         </button>
                                         <Modal
@@ -85,15 +87,15 @@ class AppPage extends Component {
                                                 transitionExit: 'transition-exit-active',
                                                 transitionExitActive: 'transition-exit-active',
                                             }}
-                                            animationDuration={1000}
-                                        >
+                                            animationDuration={1000}>
                                             <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
                                                 pulvinar risus non risus hendrerit venenatis. Pellentesque sit amet
                                                 hendrerit risus, sed porttitor quam.
                                             </p>
                                         </Modal>
-                                        <button type="button" id="change" className="btn btn-secondary" onClick={this.onOpenModal}>
+                                        <button type="button" id="change" className="btn btn-secondary"
+                                                onClick={this.onOpenModal}>
                                             KUSTUTA
                                         </button>
                                         <Modal
