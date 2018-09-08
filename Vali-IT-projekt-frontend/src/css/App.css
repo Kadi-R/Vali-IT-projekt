@@ -144,6 +144,10 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ login ]*/
 
+.help-block {
+  color:red;
+  text-shadow: -1px 0 darkred, 0 1px darkred, 1px 0 darkred, 0 -1px darkred;
+}
 input#username {
   background-image:url('../images/userico.png');
   background-repeat:no-repeat;
