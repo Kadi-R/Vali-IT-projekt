@@ -3,13 +3,12 @@ html, body {
     min-height:100%;
     background:linear-gradient(rgb(248,190,0),rgb(259,156,0));
     justify-content: center;
-    background-repeat: no-repeat;
 
 }
 
 .Greeting {
-    margin: 0px;
-    border: 0px;
+    margin: 0;
+    border: 0;
     display: inline-block;
     position: relative;
     padding-left: 35%;
@@ -18,6 +17,7 @@ html, body {
 .Wrap {
     width:1300px;
     margin: 0 auto;
+
 
 }
 h1{
@@ -29,7 +29,7 @@ h1{
     font-weight:bold;
     text-align:center;
     border-radius: 30px;
-    box-shadow:0 3px 20px 0px rgba(0, 0, 0, 0.6);
+    box-shadow:0 3px 20px 0 rgba(0, 0, 0, 0.6);
 
 }
 
@@ -37,7 +37,7 @@ h1{
     border-radius: 40px;
     font-size:25px;
     font-weight:bold;
-    box-shadow:0 3px 20px 0px rgba(0, 0, 0, 0.6);
+    box-shadow:0 3px 20px 0 rgba(0, 0, 0, 0.6);
 
 }
 
@@ -46,7 +46,7 @@ h1{
     border-radius: 40px;
     font-size:22px;
     font-weight:bold;
-    box-shadow:0 3px 20px 0px rgba(0, 0, 0, 0.6);
+    box-shadow:0 3px 20px 0 rgba(0, 0, 0, 0.6);
     background-color: rgb(63,63,63);
     border: none;
 
@@ -93,17 +93,14 @@ nav{
     padding-bottom: 200px;
     font-size:20px;
     color:white;
-    box-shadow:0 3px 20px 0px rgba(0, 0, 0, 0.6);
     text-align: center;
-
-
+    box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.6);
 }
 
 .wrapper {
-
     padding-top: 5%;
-
 }
+
 tbody:before {
     content: "-";
     display: block;
@@ -119,6 +116,8 @@ th {
     height:auto;
     width:auto;
     text-align: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     border-radius: 5px;
 
 }
@@ -141,3 +140,4 @@ tr{
 td input[type="checkbox"] {
     margin: 0 auto;
 }
+
