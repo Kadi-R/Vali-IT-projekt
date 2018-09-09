@@ -23,17 +23,17 @@ class AppPage extends Component {
         this.onCloseModal3 = this.onCloseModal3.bind(this);
         this.onCloseModal4 = this.onCloseModal4.bind(this);
 
+
         this.state = {
             openFirstModal: false,
             openSecondModal: false,
             openThirdModal: false,
             openFourthModal: false,
             data: null,
-            event_name: '',
-            time: '',
-            description: '',
-            submitted: false
+            submitted: false,
+            items: []
         };
+
     }
 
     componentDidMount() {
@@ -74,8 +74,8 @@ class AppPage extends Component {
         const {openFirstModal, openSecondModal, openThirdModal, openFourthModal} = this.state;
         const {event_name, time, description, submitted} = this.state;
         return (
+            <body>
             <div className="AppPage">
-                <body>
                 <div className="Wrap">
                     <header>
                         <nav>
@@ -113,9 +113,9 @@ class AppPage extends Component {
                                     <td>Arsti aeg</td>
                                     <td>30. oktoober 2018</td>
                                     <td>Silmaarsti aeg. Silmaarsti nimi on: dr Kukk</td>
-                                    <td><Input type="checkbox" id="checkbox2"/>{' '}</td>
-                                    <div className="buttons">
-                                        <Button type="button" id="change" className="btn btn-secondary" onClick={this.onOpenModal2}>MUUDA</Button>
+                                    <td><Input type="checkbox" id="checkbox"/>{' '}</td>
+                                        <Button type="button" id="change" className="btn btn-secondary"
+                                                onClick={this.onOpenModal2}>MUUDA</Button>
                                         <Modal open={openSecondModal} onClose={this.onCloseModal2} centered
                                                classNames={{overlay: 'custom-overlay', modal: 'custom-modal2'}}>
 
@@ -130,13 +130,15 @@ class AppPage extends Component {
                                                            placeholder="Aeg"/> {/*sql-is oli date*/}
                                                 </FormGroup>
                                                 <FormGroup>
-                                                    <textarea type="text" class="form-control" rows="5" name="description" placeholder="Kirjeldus"/>
+                                                    <textarea type="text" className="form-control" rows="5"
+                                                              name="description" placeholder="Kirjeldus"/>
                                                 </FormGroup>
                                             </Form>
                                             <Button color="warning">SALVESTA</Button>{' '}
                                             <Button color="secondary" onClick={this.onCloseModal2}>TÜHISTA</Button>{' '}
                                         </Modal>
-                                        <Button type="button" id = "delete" className="secondary" onClick={this.onOpenModal3}>KUSTUTA</Button>
+                                        <Button type="button" id="delete" className="secondary"
+                                                onClick={this.onOpenModal3}>KUSTUTA</Button>
                                         <Modal open={openThirdModal} onClose={this.onCloseModal3} centered
                                                classNames={{overlay: 'custom-overlay', modal: 'custom-modal3'}}>
                                             <h4>Kirje kustutamine</h4>
@@ -147,26 +149,10 @@ class AppPage extends Component {
                                             <Button color="secondary" onClick={this.onCloseModal3}>TÜHISTA</Button>{' '}
                                         </Modal>
 
-                                    </div>
-
-                                </tr>
-
-                                <tr>
-                                    <td>Sõbraga kokkusaamine</td>
-                                    <td>11. september kella 12 aeg</td>
-                                    <td>Saan sõbraga kokku kohvikus hommikul</td>
-                                    <td><Input type="checkbox" id="checkbox2"/>{' '}</td>
-                                    <div className="buttons">
-                                        <button type="button" id="change" className="btn btn-secondary"
-                                                onClick="prepareCustomerAdd()">MUUDA
-                                        </button>
-                                        <button type="button" id="delete" className="btn btn-secondary"
-                                                onClick="prepareCustomerAdd()">KUSTUTA
-                                        </button>
-                                    </div>
                                 </tr>
                                 <tr>
-                                    <Button type="button" id="add" className="btn btn-secondary" onClick={this.onOpenModal4}>LISA</Button>
+                                    <Button type="button" id="add" className="btn btn-secondary"
+                                            onClick={this.onOpenModal4}>LISA</Button>
                                     <Modal open={openFourthModal} onClose={this.onCloseModal4} centered
                                            classNames={{overlay: 'custom-overlay', modal: 'custom-modal4'}}>
 
@@ -181,7 +167,8 @@ class AppPage extends Component {
                                                        placeholder="Aeg"/> {/*sql-is oli date*/}
                                             </FormGroup>
                                             <FormGroup>
-                                                <textarea type="text" class="form-control" rows="5" name="description" placeholder="Kirjeldus"/>
+                                                <textarea type="text" className="form-control" rows="5" name="description"
+                                                          placeholder="Kirjeldus"/>
                                             </FormGroup>
                                         </Form>
                                         <Button color="warning">SALVESTA</Button>{' '}
@@ -200,9 +187,10 @@ class AppPage extends Component {
 
                 </div>
 
-                </body>
 
             </div>
+            </body>
+
         );
     }
 }
