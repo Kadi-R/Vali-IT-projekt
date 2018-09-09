@@ -15,8 +15,10 @@ class AppPage extends Component {
 
         this.onOpenModal1 = this.onOpenModal1.bind(this);
         this.onOpenModal2 = this.onOpenModal2.bind(this);
+        this.onOpenModal3 = this.onOpenModal3.bind(this);
         this.onCloseModal1 = this.onCloseModal1.bind(this);
         this.onCloseModal2 = this.onCloseModal2.bind(this);
+        this.onCloseModal3 = this.onCloseModal3.bind(this);
 
         this.state = {
             openFirstModal: false,
@@ -47,10 +49,16 @@ class AppPage extends Component {
     onCloseModal2 = () => {
         this.setState({openSecondModal: false});
     };
+    onOpenModal3 = () => {
+        this.setState({openFirstModal: true});
+    };
+    onCloseModal3 = () => {
+        this.setState({openFirstModal: false});
+    };
 
 
     render() {
-        const {openFirstModal, openSecondModal} = this.state;
+        const {openFirstModal, openSecondModal, openThirdModal} = this.state;
         const {event_name, time, description, submitted} = this.state;
         return (
             <div className="AppPage">
@@ -96,7 +104,7 @@ class AppPage extends Component {
                                     <div className="buttons">
                                         <Button type="button" id="change" className="btn btn-secondary" onClick={this.onOpenModal2}>MUUDA</Button>
                                         <Modal open={openSecondModal} onClose={this.onCloseModal2} centered
-                                               classNames={{overlay: 'custom-overlay', modal: 'custom-modal'}}>
+                                               classNames={{overlay: 'custom-overlay', modal: 'custom-modal2'}}>
 
                                             <h4>Kirje muutmine</h4>
                                             <Form>
@@ -115,15 +123,15 @@ class AppPage extends Component {
                                             <Button color="warning">SALVESTA</Button>{' '}
                                             <Button color="secondary" onClick={this.onCloseModal2}>TÜHISTA</Button>{' '}
                                         </Modal>
-                                        <Button type="button" id="delete" className="secondary" onClick={this.onOpenModal1}>KUSTUTA</Button>
-                                        <Modal open={openFirstModal} onClose={this.onCloseModal1} centered
-                                               classNames={{overlay: 'custom-overlay', modal: 'custom-modal1'}}>
+                                        <Button type="button" id="delete" className="secondary" onClick={this.onOpenModal3}>KUSTUTA</Button>
+                                        <Modal open={openThirdModal} onClose={this.onCloseModal3} centered
+                                               classNames={{overlay: 'custom-overlay', modal: 'custom-modal3'}}>
                                             <h4>Kirje kustutamine</h4>
                                             <p>
                                                 OLED SA KINDEL?
                                             </p>
                                             <Button color="warning">KUSTUTA</Button>{' '}
-                                            <Button color="secondary" onClick={this.onCloseModal1}>TÜHISTA</Button>{' '}
+                                            <Button color="secondary" onClick={this.onCloseModal3}>TÜHISTA</Button>{' '}
                                         </Modal>
 
                                     </div>
@@ -143,6 +151,29 @@ class AppPage extends Component {
                                                 onClick="prepareCustomerAdd()">KUSTUTA
                                         </button>
                                     </div>
+                                </tr>
+                                <tr>
+                                <Button type="button" id="change" className="btn btn-secondary" onClick={this.onOpenModal2}>LISA</Button>
+                                <Modal open={openSecondModal} onClose={this.onCloseModal2} centered
+                                       classNames={{overlay: 'custom-overlay', modal: 'custom-modal'}}>
+
+                                    <h4>Kirje lisamine</h4>
+                                    <Form>
+                                        <FormGroup>
+                                            <Input type="text" name="event_name" id="event_name"
+                                                   placeholder="Ürituse nimi"/>
+                                        </FormGroup>
+                                        <FormGroup>
+                                            <Input type="text" name="date" id="date"
+                                                   placeholder="Aeg"/> {/*sql-is oli date*/}
+                                        </FormGroup>
+                                        <FormGroup>
+                                            <textarea type="text" class="form-control" rows="5" name="description" placeholder="Kirjeldus"/>
+                                        </FormGroup>
+                                    </Form>
+                                    <Button color="warning">SALVESTA</Button>{' '}
+                                    <Button color="secondary" onClick={this.onCloseModal2}>TÜHISTA</Button>{' '}
+                                </Modal>
                                 </tr>
                                 </tbody>
 
