@@ -3,50 +3,71 @@ import {Component} from 'react'
 import './css/AppPage.css';
 import {Button, Form, FormGroup, Label, Input, FormText} from 'reactstrap';
 import Modal from 'react-responsive-modal';
+import {userActions} from "./actions/user.actions";
+
+const API = 'https://localhost:3000/login';
+const DEFAULT_QUERY = 'redux';
 
 
 class AppPage extends Component {
-    state = {
-        open: false,
+    constructor(props) {
+        super(props);
+
+        this.onOpenModal1 = this.onOpenModal1.bind(this);
+        this.onOpenModal2 = this.onOpenModal2.bind(this);
+        this.onCloseModal1 = this.onCloseModal1.bind(this);
+        this.onCloseModal2 = this.onCloseModal2.bind(this);
+
+        this.state = {
+            openFirstModal: false,
+            openSecondModal: false,
+            data: null,
+            event_name: '',
+            time: '',
+            description: '',
+            submitted: false
+        };
+    }
+
+    componentDidMount() {
+        fetch(API + DEFAULT_QUERY)
+            .then(response => response.json())
+            .then(data => this.setState({hits: data.hits}));
+    }
+
+    onOpenModal1 = () => {
+        this.setState({openFirstModal: true});
+    };
+    onOpenModal2 = () => {
+        this.setState({openSecondModal: true});
+    };
+    onCloseModal1 = () => {
+        this.setState({openFirstModal: false});
+    };
+    onCloseModal2 = () => {
+        this.setState({openSecondModal: false});
     };
 
-    onOpenModal = () => {
-        this.setState({open: true});
-    };
-
-    onCloseModal = () => {
-        this.setState({open: false});
-    };
 
     render() {
-        const {open} = this.state;
+        const {openFirstModal, openSecondModal} = this.state;
+        const {event_name, time, description, submitted} = this.state;
         return (
             <div className="AppPage">
                 <body>
                 <div className="Wrap">
                     <header>
                         <nav>
-                            <button type="button" id="logout" className="btn btn-secondary" onClick={this.onOpenModal}>
-                                LOGI VÄLJA
-                            </button>
-
-                            <Modal
-                                open={open}
-                                onClose={this.onCloseModal}
-                                center
-                                classNames={{
-                                    transitionEnter: 'transition-enter',
-                                    transitionEnterActive: 'transition-enter-active',
-                                    transitionExit: 'transition-exit-active',
-                                    transitionExitActive: 'transition-exit-active',
-                                }}
-                                animationDuration={1000}
-                            >
+                            <Button type="button" id="logout" className="btn btn-secondary" onClick={this.onOpenModal1}>LOGI
+                                VÄLJA</Button>
+                            <Modal id="log-out-modal" open={openFirstModal} onClose={this.onCloseModal1} centered
+                                   classNames={{overlay: 'custom-overlay', modal: 'custom-modal1'}}>
+                                <h4>Välja logimine</h4>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                                    pulvinar risus non risus hendrerit venenatis. Pellentesque sit amet
-                                    hendrerit risus, sed porttitor quam.
+                                    OLED SA KINDEL?
                                 </p>
+                                <Button color="warning">LOGI VÄLJA</Button>{' '}
+                                <Button color="secondary" onClick={this.onCloseModal1}>TÜHISTA</Button>{' '}
                             </Modal>
                         </nav>
                     </header>
@@ -73,49 +94,38 @@ class AppPage extends Component {
                                     <td>Silmaarsti aeg. Silmaarsti nimi on: dr Kukk</td>
                                     <td><Input type="checkbox" id="checkbox2"/>{' '}</td>
                                     <div className="buttons">
-                                        <button type="button" id="change" className="btn btn-secondary"
-                                                onClick={this.onOpenModal}>
-                                            MUUDA
-                                        </button>
-                                        <Modal
-                                            open={open}
-                                            onClose={this.onCloseModal}
-                                            center
-                                            classNames={{
-                                                transitionEnter: 'transition-enter',
-                                                transitionEnterActive: 'transition-enter-active',
-                                                transitionExit: 'transition-exit-active',
-                                                transitionExitActive: 'transition-exit-active',
-                                            }}
-                                            animationDuration={1000}>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                                                pulvinar risus non risus hendrerit venenatis. Pellentesque sit amet
-                                                hendrerit risus, sed porttitor quam.
-                                            </p>
+                                        <Button type="button" id="change" className="btn btn-secondary" onClick={this.onOpenModal2}>MUUDA</Button>
+                                        <Modal open={openSecondModal} onClose={this.onCloseModal2} centered
+                                               classNames={{overlay: 'custom-overlay', modal: 'custom-modal'}}>
+
+                                            <h4>Kirje muutmine</h4>
+                                            <Form>
+                                                <FormGroup>
+                                                    <Input type="text" name="event_name" id="event_name"
+                                                           placeholder="Ürituse nimi"/>
+                                                </FormGroup>
+                                                <FormGroup>
+                                                    <Input type="text" name="date" id="date"
+                                                           placeholder="Aeg"/> {/*sql-is oli date*/}
+                                                </FormGroup>
+                                                <FormGroup>
+                                                    <textarea type="text" class="form-control" rows="5" name="description" placeholder="Kirjeldus"/>
+                                                </FormGroup>
+                                            </Form>
+                                            <Button color="warning">SALVESTA</Button>{' '}
+                                            <Button color="secondary" onClick={this.onCloseModal2}>TÜHISTA</Button>{' '}
                                         </Modal>
-                                        <button type="button" id="change" className="btn btn-secondary"
-                                                onClick={this.onOpenModal}>
-                                            KUSTUTA
-                                        </button>
-                                        <Modal
-                                            open={open}
-                                            onClose={this.onCloseModal}
-                                            center
-                                            classNames={{
-                                                transitionEnter: 'transition-enter',
-                                                transitionEnterActive: 'transition-enter-active',
-                                                transitionExit: 'transition-exit-active',
-                                                transitionExitActive: 'transition-exit-active',
-                                            }}
-                                            animationDuration={1000}
-                                        >
+                                        <Button type="button" id="delete" className="secondary" onClick={this.onOpenModal1}>KUSTUTA</Button>
+                                        <Modal open={openFirstModal} onClose={this.onCloseModal1} centered
+                                               classNames={{overlay: 'custom-overlay', modal: 'custom-modal1'}}>
+                                            <h4>Kirje kustutamine</h4>
                                             <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                                                pulvinar risus non risus hendrerit venenatis. Pellentesque sit amet
-                                                hendrerit risus, sed porttitor quam.
+                                                OLED SA KINDEL?
                                             </p>
+                                            <Button color="warning">KUSTUTA</Button>{' '}
+                                            <Button color="secondary" onClick={this.onCloseModal1}>TÜHISTA</Button>{' '}
                                         </Modal>
+
                                     </div>
 
                                 </tr>
