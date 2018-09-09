@@ -16,13 +16,18 @@ class AppPage extends Component {
         this.onOpenModal1 = this.onOpenModal1.bind(this);
         this.onOpenModal2 = this.onOpenModal2.bind(this);
         this.onOpenModal3 = this.onOpenModal3.bind(this);
+        this.onOpenModal4 = this.onOpenModal4.bind(this);
+
         this.onCloseModal1 = this.onCloseModal1.bind(this);
         this.onCloseModal2 = this.onCloseModal2.bind(this);
         this.onCloseModal3 = this.onCloseModal3.bind(this);
+        this.onCloseModal4 = this.onCloseModal4.bind(this);
 
         this.state = {
             openFirstModal: false,
             openSecondModal: false,
+            openThirdModal: false,
+            openFourthModal: false,
             data: null,
             event_name: '',
             time: '',
@@ -43,22 +48,30 @@ class AppPage extends Component {
     onOpenModal2 = () => {
         this.setState({openSecondModal: true});
     };
+    onOpenModal3 = () => {
+        this.setState({openThirdModal: true});
+    };
+    onOpenModal4 = () => {
+        this.setState({openFourthModal: true});
+    };
+
     onCloseModal1 = () => {
         this.setState({openFirstModal: false});
     };
     onCloseModal2 = () => {
         this.setState({openSecondModal: false});
     };
-    onOpenModal3 = () => {
-        this.setState({openFirstModal: true});
-    };
     onCloseModal3 = () => {
-        this.setState({openFirstModal: false});
+        this.setState({openThirdModal: false});
+    };
+
+    onCloseModal4 = () => {
+        this.setState({openFourthModal: false});
     };
 
 
     render() {
-        const {openFirstModal, openSecondModal, openThirdModal} = this.state;
+        const {openFirstModal, openSecondModal, openThirdModal, openFourthModal} = this.state;
         const {event_name, time, description, submitted} = this.state;
         return (
             <div className="AppPage">
@@ -123,7 +136,7 @@ class AppPage extends Component {
                                             <Button color="warning">SALVESTA</Button>{' '}
                                             <Button color="secondary" onClick={this.onCloseModal2}>TÜHISTA</Button>{' '}
                                         </Modal>
-                                        <Button type="button" id="delete" className="secondary" onClick={this.onOpenModal3}>KUSTUTA</Button>
+                                        <Button type="button" id = "delete" className="secondary" onClick={this.onOpenModal3}>KUSTUTA</Button>
                                         <Modal open={openThirdModal} onClose={this.onCloseModal3} centered
                                                classNames={{overlay: 'custom-overlay', modal: 'custom-modal3'}}>
                                             <h4>Kirje kustutamine</h4>
@@ -153,27 +166,28 @@ class AppPage extends Component {
                                     </div>
                                 </tr>
                                 <tr>
-                                <Button type="button" id="change" className="btn btn-secondary" onClick={this.onOpenModal2}>LISA</Button>
-                                <Modal open={openSecondModal} onClose={this.onCloseModal2} centered
-                                       classNames={{overlay: 'custom-overlay', modal: 'custom-modal'}}>
+                                    <Button type="button" id="add" className="btn btn-secondary" onClick={this.onOpenModal4}>LISA</Button>
+                                    <Modal open={openFourthModal} onClose={this.onCloseModal4} centered
+                                           classNames={{overlay: 'custom-overlay', modal: 'custom-modal4'}}>
 
-                                    <h4>Kirje lisamine</h4>
-                                    <Form>
-                                        <FormGroup>
-                                            <Input type="text" name="event_name" id="event_name"
-                                                   placeholder="Ürituse nimi"/>
-                                        </FormGroup>
-                                        <FormGroup>
-                                            <Input type="text" name="date" id="date"
-                                                   placeholder="Aeg"/> {/*sql-is oli date*/}
-                                        </FormGroup>
-                                        <FormGroup>
-                                            <textarea type="text" class="form-control" rows="5" name="description" placeholder="Kirjeldus"/>
-                                        </FormGroup>
-                                    </Form>
-                                    <Button color="warning">SALVESTA</Button>{' '}
-                                    <Button color="secondary" onClick={this.onCloseModal2}>TÜHISTA</Button>{' '}
-                                </Modal>
+                                        <h4>Kirje lisamine</h4>
+                                        <Form>
+                                            <FormGroup>
+                                                <Input type="text" name="event_name" id="event_name"
+                                                       placeholder="Ürituse nimi"/>
+                                            </FormGroup>
+                                            <FormGroup>
+                                                <Input type="text" name="date" id="date"
+                                                       placeholder="Aeg"/> {/*sql-is oli date*/}
+                                            </FormGroup>
+                                            <FormGroup>
+                                                <textarea type="text" class="form-control" rows="5" name="description" placeholder="Kirjeldus"/>
+                                            </FormGroup>
+                                        </Form>
+                                        <Button color="warning">SALVESTA</Button>{' '}
+                                        <Button color="secondary" onClick={this.onCloseModal4}>TÜHISTA</Button>{' '}
+                                    </Modal>
+
                                 </tr>
                                 </tbody>
 

@@ -63,6 +63,14 @@ h1 {
 
 }
 
+#add {
+    color: white;
+    font-weight: bold;
+    background-color: rgb(63, 63, 63);
+    border: none;
+    font-size: 15px;
+
+}
 .buttons {
     display: flex;
 }
@@ -138,6 +146,17 @@ td input[type="checkbox"] {
 }
 
 .custom-modal2{
+    background: black;
+    max-width: 700px;
+    width: 500px;
+    align-content: center;
+    color: white;
+    height: 500px;
+    max-height: 1000px;
+    border-radius: 30px;
+}
+
+.custom-modal4{
     background: black;
     max-width: 700px;
     width: 500px;
