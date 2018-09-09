@@ -11,7 +11,7 @@ html, body {
     border: 0;
     display: inline-block;
     position: relative;
-    padding-left: 35%;
+    padding-left: 40%;
 }
 
 .Wrap {
@@ -33,6 +33,13 @@ h1 {
 
 }
 
+h4 {
+    padding-bottom: 10%;
+
+}
+
+
+
 #logout {
     color: white;
     border-radius: 40px;
@@ -44,24 +51,17 @@ h1 {
 
 }
 
-#change {
-    color: white;
-    font-weight: bold;
-    background-color: rgb(63, 63, 63);
-    border: none;
-    margin-right: 5%;
-    font-size: 15px;
-
-}
-
-#delete {
+#change #delete {
     color: white;
     font-weight: bold;
     background-color: rgb(63, 63, 63);
     border: none;
     font-size: 15px;
+    display: flex;
+    padding-top: 10px;
 
 }
+
 
 #add {
     color: white;
@@ -69,10 +69,8 @@ h1 {
     background-color: rgb(63, 63, 63);
     border: none;
     font-size: 15px;
-
-}
-.buttons {
-    display: flex;
+    position: relative;
+    top:30px;
 }
 
 nav {
@@ -88,7 +86,8 @@ nav {
     background-color: rgb(36, 36, 36);
     border-radius: 30px;
     padding: 2% 3%;
-    width: 1300px;
+    width: 1100px;
+    max-width: 1300px;
     padding-bottom: 200px;
     font-size: 20px;
     color: white;
@@ -98,6 +97,7 @@ nav {
 
 .wrapper {
     padding-top: 5%;
+    padding-left: 10%;
 }
 
 tbody:before {
@@ -125,6 +125,7 @@ td {
     border-spacing: 15px;
     margin: 0 10px;
 
+
 }
 
 tr {
@@ -134,9 +135,19 @@ tr {
 
 }
 
-td input[type="checkbox"] {
-    margin: 0 auto;
+#checkbox {
+    width: 20px;
+    height: 20px;
+
 }
+
+Input[type="checkbox"] {
+    position: relative;
+    top:5px;
+    left:5px;
+}
+
+
 
 /*----------------------------------------
 [Modal window]*/
@@ -199,11 +210,6 @@ td input[type="checkbox"] {
     color: white;
     background-color: rgba(36, 36, 36, 0.5);
     border-radius: 10px;
-
-}
-
-h4 {
-    padding-bottom: 10%;
 
 }
 
